@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>กล่องข้อความของจอมมารน้อย</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Kanit', sans-serif;
+      background: linear-gradient(to right, #ffe0ec, #ffccd5);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #d6336c;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 40px;
+      font-size: 22px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background-color: #ff85c1;
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content {
+      background-color: #fff0f5;
+      margin: 15% auto;
+      padding: 30px;
+      border: 2px solid #ffadd2;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      animation: slideDown 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      background-color: #ff85c1;
+      padding: 10px 20px;
+      border: none;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #ff5baf;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>กล่องข้อความของจอมมารน้อย💗</h1>
+  <button onclick="showLove()">กดเค้าหน่อย</button>
+
+  <div id="loveModal" class="modal">
+    <div class="modal-content">
+      <h2>💖 รักอ้วนน้าาาาาาาา 💖</h2>
+      <p style="font-size: 18px; color: #d6336c; line-height: 1.6;">
+        ไม่ว่าอ้วนจะเหนื่อยแค่ไหน หรือผ่านอะไรมาก็ตาม อยากให้รู้ไว้นะว่าเค้าอยู่ตรงนี้เสมอ<br>
+        เค้าเชื่อในตัวแฟนทุกวันเลย และเค้าภูมิใจในทุกความพยายามของเธอนะ <br><br>
+        เค้าอยากให้เธอพักผ่อนให้พอ ยิ้มให้ตัวเองบ้าง และอย่าลืมว่าเธอไม่ต้องเก่งที่สุด<br>
+        แค่เป็นตัวเองก็พิเศษมากพอแล้วสำหรับเค้าแล้วนะ <br><br>
+        ขอบคุณที่อยู่ด้วยกัน รักอ้วนนะ 
+      </p>
+      <button class="close-btn" onclick="closeLove()">ปิด</button>
+    </div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("loveModal").style.display = "block";
+    }
+
+    function closeLove() {
+      document.getElementById("loveModal").style.display = "none";
+    }
+
+    // ปิด modal เมื่อคลิกนอกกล่อง
+    window.onclick = function(event) {
+      const modal = document.getElementById("loveModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
